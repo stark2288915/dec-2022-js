@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="340cbd9f-641e-4ea3-a9f0-283c0a95810b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dec-2022-js.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lessons about js/lesson1/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lessons about js/lesson1/script.js" afterDir="false" />
+    <list default="true" id="340cbd9f-641e-4ea3-a9f0-283c0a95810b" name="Changes" comment="Створив купу змінних поки не вимкнули світло.">
+      <change beforePath="$PROJECT_DIR$/lessons about js/lesson1/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/lessons about js/lesson1/script.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,11 +53,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1675202492254</updated>
-      <workItem from="1675202494027" duration="1647000" />
+      <workItem from="1675202494027" duration="2008000" />
     </task>
+    <task id="LOCAL-00001" summary="Створив купу змінних поки не вимкнули світло.">
+      <created>1675204319851</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1675204319851</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Створив купу змінних поки не вимкнули світло." />
+    <option name="LAST_COMMIT_MESSAGE" value="Створив купу змінних поки не вимкнули світло." />
   </component>
 </project>

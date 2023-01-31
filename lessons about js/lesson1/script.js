@@ -43,7 +43,7 @@ console.log(typeof(b));
 console.log(typeof(c));
 
 let userLastName = prompt('Введіть свое призвіше:');
-let userFirstName = prompt('Введіть свое призвіше:');
-let userMiddleName = prompt('Введіть свое призвіше:');
+let userFirstName = prompt('Введіть свое ім\'я:');
+let userMiddleName = prompt('Введіть як Вас побатькові:');
 
-console.log(userLastName + " " + userFirstName + " " + userMiddleName);
+console.log(`${userLastName} ${userFirstName} ${userMiddleName}`);
