@@ -24,9 +24,11 @@ let numbers = [1,2,3,4,5,6,7,8,9];
 
 function showElements (array){
     for (let element of array){
-        console.log(element);
+        document.write(element);
     }
 }
+
+showElements(numbers);
 
 /*- створити функцію яка створює параграф з текстом. Текст задати через аргумент*/
 
@@ -34,6 +36,8 @@ let someParagraph = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. A
 function paragraph(par){
     document.write(`<p>${par}</p>`);
 }
+
+paragraph(someParagraph);
 
 /*- створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий*/
 
@@ -46,30 +50,149 @@ function list(li){
             </ul>`);
 }
 
+list(car);
+
 /*
 - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий. Кількість li визначається другим аргументом, який є числовим (тут використовувати цикл)
 */
 
 let myCar = "Mitsubishi";
 function list2(text){
-    for(i = 0; i < 7; i++){
-        document.write(`<ul>
-                           <li>${text}</li>
-                           <li>${text}</li>
-                           <li>${text}</li>
-                        </ul>`);
+    document.write(`<ul>`);
+    for(i = 0; i < 3; i++){
+        document.write(`<li>${text}</li>`);
+    }
+    document.write(`</ul>`);
+}
+list2(myCar);
+
+
+/*- створити функцію яка приймає масив примітивних елементів (числа,стрінги,булеві), та будує для них список*/
+
+let simpleArray = [10, 'hello', true, 50, 'Lviv', false, 'Kyiv', true, 66, false];
+
+function forSimpleArray(array){
+    document.write(`<ul>`);
+    for (const arrayElement of array) {
+        document.write(`<li>${arrayElement}</li>`);
+    }
+    document.write(`</ul>`);
+}
+
+forSimpleArray(simpleArray);
+
+/*
+- створити функцію яка приймає масив об'єктів з наступними полями id,name,age , та виводить їх в документ. Для кожного об'єкту окремий блок.
+*/
+
+
+let users = [
+    {id: 0, name: 'Sergey', age: 27},
+    {id: 1, name: 'Alex', age: 21},
+    {id: 2, name: 'Ylia', age: 35},
+    {id: 3, name: 'Mark', age: 18},
+    {id: 4, name: 'Miron', age: 56},
+    {id: 5, name: 'Vasya', age: 43}
+];
+
+function usersList(array){
+    for (const arrayElement of array) {
+        document.write(`<ul>`)
+        for (const arrayElementKey in arrayElement) {
+            document.write(`<li>${arrayElementKey}: ${arrayElement[arrayElementKey]}</li>`)
+        }
+        document.write(`</ul>`)
+
     }
 }
 
+usersList(users);
+
+/*- створити функцію яка повертає найменьше число з масиву*/
+
+/*let numbers2 = [2,3,4,5,6,7,8,9];
+function searchLittleNum(array){
+
+}
+searchLittleNum(numbers2);
+
+document.write(Math.min(...numbers2));*/
+
 
 /*
-
-
-- створити функцію яка приймає масив примітивних елементів (числа,стрінги,булеві), та будує для них список
-- створити функцію яка приймає масив об'єктів з наступними полями id,name,age , та виводить їх в документ. Для кожного об'єкту окремий блок.
-- створити функцію яка повертає найменьше число з масиву
 - створити функцію sum(arr)яка приймає масив чисел, сумує значення елементів масиву та повертає його. Приклад sum([1,2,10]) //->13
-- створити функцію swap(arr,index1,index2). Функція міняє місцями заняення у відаовідних індексах
-Приклад  swap([11,22,33,44],0,1) //=> [22,11,33,44]
-- Написати функцію обміну валюти exchange(sumUAH,currencyValues,exchangeCurrency)
+*/
+let arrayForSum = [10, 20, 30, 40, 50, 60, 70, 80, 90]
+function sum(array){
+    let result = 0;
+    for (const arrayElement of array) {
+        result += arrayElement;
+    }
+    document.write(result);
+    return result;
+}
+sum(arrayForSum);
+document.write(`<br>`);
+
+/*- створити функцію swap(arr,index1,index2). Функція міняє місцями заняення у відаовідних індексах
+Приклад  swap([11,22,33,44],0,1) //=> [22,11,33,44]*/
+
+function swap(arr,index1,index2){
+    let element1 = arr[index1];
+    let element2 = arr[index2];
+    arr[index1] = element2;
+    arr[index2] = element1;
+
+    document.write(`${arr[index1]} ${arr[index2]}`);
+    return `${arr[index1]} ${arr[index2]}`;
+}
+swap(arrayForSum, 2,3);
+
+
+
+/*- Написати функцію обміну валюти exchange(sumUAH,currencyValues,exchangeCurrency)
 Приклад exchange(10000,[{currency:'USD',value:40},{currency:'EUR',value:42}],'USD') // => 250*/
+let currency = [
+    {
+        currency:'USD',
+        value:40
+    },
+
+    {
+        currency: 'EUR',
+        value: 42
+    },
+    {
+        currency: 'PLN',
+        value: 8
+    },
+    {
+        currency: 'GBP',
+        value: 45
+    },
+    {
+        currency: 'CHF',
+        value: 40
+    }
+];
+
+document.write(`<br>`);
+
+function exchange(sumUAH,currencyValues,exchangeCurrency){
+
+    for (const CurrencyElement of currencyValues) {
+
+
+            if(exchangeCurrency == CurrencyElement['currency']){
+                let result = sumUAH * CurrencyElement['value'];
+                document.write(sumUAH * CurrencyElement['value']);
+                document.write(`${sumUAH}грн = ${result}${CurrencyElement['currency']}`);
+            }
+    }
+}
+
+exchange(2, currency, 'GBP');
+
+/*
+document.write(sumUAH * currencyValues['value']);
+return sumUAH * currencyValues['value'];*/
