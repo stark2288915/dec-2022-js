@@ -109,26 +109,34 @@ function usersList(array){
 usersList(users);
 
 /*- створити функцію яка повертає найменьше число з масиву*/
-
-/*let numbers2 = [2,3,4,5,6,7,8,9];
+document.write(`<br>`);
+let numbers2 = [8,1,3,5,4,7,3,9];
 function searchLittleNum(array){
-
+    let min = 9999999;
+    for (const Element of array) {
+        if(min > Element){
+            min = Element;
+        }
+    }
+    document.write(`Мінімальне число масиву: ${min}`);
+    return min;
 }
 searchLittleNum(numbers2);
 
-document.write(Math.min(...numbers2));*/
+
 
 
 /*
 - створити функцію sum(arr)яка приймає масив чисел, сумує значення елементів масиву та повертає його. Приклад sum([1,2,10]) //->13
 */
+document.write(`<br>`);
 let arrayForSum = [10, 20, 30, 40, 50, 60, 70, 80, 90]
 function sum(array){
     let result = 0;
     for (const arrayElement of array) {
         result += arrayElement;
     }
-    document.write(result);
+    document.write(`Сума масиву: ${result}`);
     return result;
 }
 sum(arrayForSum);
@@ -142,9 +150,7 @@ function swap(arr,index1,index2){
     let element2 = arr[index2];
     arr[index1] = element2;
     arr[index2] = element1;
-
-    document.write(`${arr[index1]} ${arr[index2]}`);
-    return `${arr[index1]} ${arr[index2]}`;
+    return arr;
 }
 swap(arrayForSum, 2,3);
 
@@ -157,7 +163,6 @@ let currency = [
         currency:'USD',
         value:40
     },
-
     {
         currency: 'EUR',
         value: 42
@@ -180,19 +185,16 @@ document.write(`<br>`);
 
 function exchange(sumUAH,currencyValues,exchangeCurrency){
 
-    for (const CurrencyElement of currencyValues) {
+    for (const Element of currencyValues) {
 
-
-            if(exchangeCurrency == CurrencyElement['currency']){
-                let result = sumUAH * CurrencyElement['value'];
-                document.write(sumUAH * CurrencyElement['value']);
-                document.write(`${sumUAH}грн = ${result}${CurrencyElement['currency']}`);
+            if(exchangeCurrency === Element['currency']){
+                let result = sumUAH / Element['value'];
+                document.write(`${sumUAH}грн = ${result}${Element['currency']}`);
+                return result;
             }
     }
 }
 
-exchange(2, currency, 'GBP');
+exchange(16, currency, 'PLN');
 
-/*
-document.write(sumUAH * currencyValues['value']);
-return sumUAH * currencyValues['value'];*/
+
