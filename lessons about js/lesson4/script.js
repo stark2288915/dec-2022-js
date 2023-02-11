@@ -7,7 +7,6 @@ function squareRectangle(a, b) {
 
 function squareCircle(r){
     return 3.14 * (r * r);
-
 }
 
 
@@ -110,9 +109,9 @@ usersList(users);
 
 /*- створити функцію яка повертає найменьше число з масиву*/
 document.write(`<br>`);
-let numbers2 = [8,1,3,5,4,7,3,9];
+let numbers2 = [8,9,3,5,4,7,3,1];
 function searchLittleNum(array){
-    let min = 9999999;
+    let min = array[0];
     for (const Element of array) {
         if(min > Element){
             min = Element;
