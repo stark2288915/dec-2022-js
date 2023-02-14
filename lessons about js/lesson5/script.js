@@ -99,9 +99,9 @@ let usersList = (array) => {
 let numbers2 = [8,9,3,5,4,7,3,1];
 let searchLittleNum = (array) => {
     let min = array[0];
-    for (const Element of array) {
-        if(min > Element){
-            min = Element;
+    for (const element of array) {
+        if(min > element){
+            min = element;
         }
     }
     document.write(`Мінімальне число масиву: ${min}`);
@@ -161,11 +161,11 @@ let currency = [
 
 
 let exchange = (sumUAH,currencyValues,exchangeCurrency) => {
-    for (const Element of currencyValues) {
+    for (const element of currencyValues) {
 
-        if(exchangeCurrency === Element['currency']){
-            let result = sumUAH / Element['value'];
-            document.write(`${sumUAH}грн = ${result}${Element['currency']}`);
+        if(exchangeCurrency === element['currency']){
+            let result = sumUAH / element['value'];
+            document.write(`${sumUAH}грн = ${result}${element['currency']}`);
             return result;
         }
     }
