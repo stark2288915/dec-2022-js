@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="340cbd9f-641e-4ea3-a9f0-283c0a95810b" name="Changes" comment="Створив купу змінних поки не вимкнули світло.">
-      <change afterPath="$PROJECT_DIR$/lessons about js/lesson6/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lessons about js/lesson6/script.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lessons about js/lesson6/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/lessons about js/lesson6/script.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +69,7 @@
       <workItem from="1676148842071" duration="163000" />
       <workItem from="1676411961057" duration="2136000" />
       <workItem from="1676642253242" duration="2330000" />
+      <workItem from="1676660351428" duration="17424000" />
     </task>
     <task id="LOCAL-00001" summary="Створив купу змінних поки не вимкнули світло.">
       <created>1675204319851</created>
