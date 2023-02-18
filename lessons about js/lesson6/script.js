@@ -25,12 +25,10 @@ document.write(`${bighw.toLowerCase()} <br/>`);
 document.write(`${bigli.toLowerCase()} <br/>`);
 document.write(`${bigjic.toLowerCase()} <br/>`);
 
-//- Є "брудна" стрінга let str = ' dirty string   ' . Почистити її від зайвих пробілів. !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//- Є "брудна" стрінга let str = ' dirty string   ' . Почистити її від зайвих пробілів.
 
 let dirtyStr = ' dirty string   ';
-document.write(`${dirtyStr.replace(" ", "")} <br/>`);
-document.write(`${dirtyStr.length} <br/>`);
-
+console.log(dirtyStr.replaceAll(" ", ""));
 
 /*
 - Напишіть функцію stringToarray(str), яка перетворює рядок на масив слів.
@@ -61,28 +59,20 @@ console.log(numToStr);
 - створити функцію sortNums(direction), яка прймає масив чисел, та сортує його від більшого до меньшого, або навпаки в залежності від значення аргументу direction.
     let nums = [11,21,3];
 
-
-
-
 sortNums(nums,'ascending') // [3,11,21]
 */
-function  sortNumss(array, callback){
+function  sortNums(array, callback){
     return callback(array);
 
 }
-console.log(sortNumss(arrNums, (array)=> {
+console.log(sortNums(arrNums, (array)=> {
     return array.sort((a, b)=> a-b);
 }));
 
 
-
-
-
-
-
 /*sortNums(nums,'descending') // [21,11,3]*/
 
-console.log(sortNumss(arrNums, (array)=> {
+console.log(sortNums(arrNums, (array)=> {
     return array.sort((a, b)=> b-a);
 }));
 
@@ -205,14 +195,110 @@ console.log(findBuba);
 
 
 /*- всі трефи від 9 та більше*/
+function filterKrest(array){
+    let findKrest = array.filter(elem => elem['cardSuit'] === 'clubs');
+    let findKrest2 = findKrest.filter(elem => elem['value'] > 8 || typeof elem['value'] === 'string');
+    return findKrest2;
+}
 
-let findKrest = myCards.filter(elem => elem['cardSuit'] === 'clubs' && elem['value'] > 8);
-console.log(findKrest);
+console.log(filterKrest(myCards));
 
-let findKrest1 = myCards.filter(elem => {
-    if(elem['cardSuit'] === 'clubs' &&){
-        return elem;
+/*
+Взяти описану колоду карт, та за допомоги reduce упакувати всі карти по "мастях" в об'єкт
+{
+    spades:[],
+    diamonds:[],
+    hearts:[],
+    clubs:[]
+}
+*/
+
+
+let reduceSuite =  myCards.reduce((accumulator, obj) => {
+    if(obj.cardSuit === 'spade'){
+        accumulator.spade.push(obj);
+    }else if(obj.cardSuit === 'diamond'){
+        accumulator.diamond.push(obj);
+    }else if(obj.cardSuit === 'heart'){
+        accumulator.heart.push(obj);
+    }else if(obj.cardSuit === 'clubs'){
+        accumulator.clubs.push(obj);
     }
-});
-console.log(findKrest1);
+    return accumulator;
+}, {spade: [], diamond: [], heart: [], clubs: []});
+
+console.log(reduceSuite);
+/*===============================================================================================================*/
+/*взяти з arrays.js (який лежить в папці 2023 plan) масив coursesArray*/
+
+
+let coursesArray = [
+    {
+        title: 'JavaScript Complex',
+        monthDuration: 5,
+        hourDuration: 909,
+        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'node.js']
+    },
+    {
+        title: 'Java Complex',
+        monthDuration: 6,
+        hourDuration: 909,
+        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'angular', 'aws', 'docker', 'git', 'java core', 'java advanced']
+    },
+    {
+        title: 'Python Complex',
+        monthDuration: 6,
+        hourDuration: 909,
+        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'angular', 'aws', 'docker', 'python core', 'python advanced']
+    },
+    {
+        title: 'QA Complex',
+        monthDuration: 4,
+        hourDuration: 909,
+        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'git', 'QA/QC']
+    },
+    {
+        title: 'FullStack',
+        monthDuration: 7,
+        hourDuration: 909,
+        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'node.js', 'python', 'java']
+    },
+    {
+        title: 'Frontend',
+        monthDuration: 4,
+        hourDuration: 909,
+        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'sass']
+    }
+];
+
+/*--написати пошук всіх об'єктів, в який в modules є sass*/
+
+let filterSass = coursesArray.filter(item => item['modules'].includes("sass"));
+console.log('filterSass');
+console.log(filterSass);
+
+
+/*--написати пошук всіх об'єктів, в який в modules є docker*/
+
+let filterDocker = coursesArray.filter(item => item['modules'].includes("docker"));
+console.log('filterDocker');
+console.log(filterDocker);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
