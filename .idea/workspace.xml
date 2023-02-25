@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="340cbd9f-641e-4ea3-a9f0-283c0a95810b" name="Changes" comment="Створив купу змінних поки не вимкнули світло.">
-      <change afterPath="$PROJECT_DIR$/lessons about js/lesson8/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lessons about js/lesson8/script.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lessons about js/lesson8/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/lessons about js/lesson8/script.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +71,7 @@
       <workItem from="1676642253242" duration="2330000" />
       <workItem from="1676660351428" duration="17424000" />
       <workItem from="1676744829499" duration="6433000" />
-      <workItem from="1677349814151" duration="8617000" />
+      <workItem from="1677349814151" duration="13161000" />
     </task>
     <task id="LOCAL-00001" summary="Створив купу змінних поки не вимкнули світло.">
       <created>1675204319851</created>
@@ -151,7 +150,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676753956043</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Створив купу змінних поки не вимкнули світло.">
+      <created>1677358518575</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1677358518575</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
