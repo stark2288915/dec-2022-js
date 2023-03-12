@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    let urlLoc = new URL(location.href);
+    let user = urlLoc.searchParams.get('info');
+    let userObj = JSON.parse(user);
+
+    let wrapper = document.createElement('div');
+    document.body.appendChild(wrapper);
+
+
+    function unpackObj (obj) {
+        for (const key in obj) {
+
+            if (typeof obj[key] === 'object') {
+                unpackObj(obj[key]);
+            } else {
+                let param = document.createElement('div');
+                param.innerText = `${key}: ${obj[key]}`;
+                wrapper.append(param);
+            }
+        }
+    }
+
+    unpackObj(userObj);
+
+
+    let showPosts = document.createElement('button');
+    showPosts.innerText = 'post of current user';
+    showPosts.onclick = function (){
+        wrapper.append('https://jsonplaceholder.typicode.com/users/USER_ID/posts)');
+    }
+
+
+
+    wrapper.append(showPosts);
+
+
+
+
+</script>
+
+</body>
+</html>

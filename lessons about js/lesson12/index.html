@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<style>
+    .wrapper {
+        display: block;
+        border: solid;
+        margin: 5px;
+    }
+
+</style>
+
+<script>
+    let url = new URL('https://jsonplaceholder.typicode.com/users');
+
+
+    let arrUsers = [];
+fetch(url)
+    .then(value => value.json())
+    .then(value => {
+        value.forEach(element => arrUsers.push(element));
+        /*for (const element of value) {
+            arrUsers.push(element);
+            //let a = document.createElement('a');
+            //a.innerText = 'showUser' + element.id;
+            //a.href = 'user-details.html?data=' + JSON.stringify(element);
+            //document.body.appendChild(a);
+            //console.log(a);
+        }*/
+        for (const user of arrUsers) {
+            let wrapper = document.createElement('div');
+            wrapper.classList.add('wrapper');
+            let userId = document.createElement('div');
+            let userName = document.createElement('div');
+            userId.innerText = `id: ${user['id']}`;
+            userName.innerText = `name: ${user['name']}`;
+            document.body.appendChild(wrapper);
+
+            let a = document.createElement('a');
+            a.innerText = 'showUser';
+            a.href = 'user-details.html?info=' + JSON.stringify(user);
+            wrapper.append(userId, userName, a);
+
+            /*for (const key in user) {
+                let div = document.createElement('div');
+                div.innerText = `${key}: ${user[key]}`;
+                wrapper.append(div);
+            }*/
+
+            //div.innerText = user['id'];
+
+
+
+        }
+    });
+
+
+
+</script>
+
+
+
+</body>
+</html>

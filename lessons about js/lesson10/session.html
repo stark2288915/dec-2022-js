@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+<script>
+
+const sessions = localStorage.getItem('sessions');
+const JSONsessions = JSON.parse(sessions);
+console.log(JSONsessions.appVersion);
+
+
+for (const session of JSONsessions) {
+    const wrapper = document.createElement('div');
+    const date = document.createElement('div');
+    const time = document.createElement('div');
+    const devise = document.createElement('div');
+
+    date.innerText = `Date: ${JSONsessions.date}`;
+    devise.innerText = `Devise: ${JSONsessions.appVersion} / ${JSONsessions.appCodeName}`;
+
+
+    wrapper.append(date, time, devise);
+
+    document.body.appendChild(wrapper);
+
+}
+
+
+
+
+    /*const wrapper = document.createElement('div');
+    const date = document.createElement('div');
+    const time = document.createElement('div');
+    const devise = document.createElement('div');
+
+wrapper.append(date, time, devise);
+date.innerText = localStorage.getItem('date');
+time.innerText = localStorage.getItem()*/
+
+
+
+
+</script>
+
+</body>
+</html>

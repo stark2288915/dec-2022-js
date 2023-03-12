@@ -5,8 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="340cbd9f-641e-4ea3-a9f0-283c0a95810b" name="Changes" comment="Створив купу змінних поки не вимкнули світло.">
-      <change afterPath="$PROJECT_DIR$/lessons about js/lesson9/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lessons about js/lesson9/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lessons about js/lesson10/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lessons about js/lesson10/index2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lessons about js/lesson10/index3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lessons about js/lesson10/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lessons about js/lesson10/session.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lessons about js/lesson12/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lessons about js/lesson12/post-details.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lessons about js/lesson12/user-details.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -18,8 +24,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -75,6 +81,11 @@
       <workItem from="1677349814151" duration="13454000" />
       <workItem from="1677516909400" duration="25000" />
       <workItem from="1677621236154" duration="9373000" />
+      <workItem from="1678035031374" duration="4940000" />
+      <workItem from="1678041217834" duration="8334000" />
+      <workItem from="1678221157242" duration="6647000" />
+      <workItem from="1678483614435" duration="574000" />
+      <workItem from="1678565964829" duration="13531000" />
     </task>
     <task id="LOCAL-00001" summary="Створив купу змінних поки не вимкнули світло.">
       <created>1675204319851</created>
