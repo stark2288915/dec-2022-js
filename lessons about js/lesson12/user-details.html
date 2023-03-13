@@ -8,23 +8,17 @@
 
 <style>
     body{
-        margin: 0px;
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
+        background: dimgray;
     }
     .bigBlock{
-
-        /*display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
         background: dimgray;
-        position: fixed;
-        width: 100%;
-        height: 100%;
-*/
+
+
+
+
+
+
+
     }
     /*.param{
         display: flex;
@@ -35,9 +29,42 @@
 
 
     .wrapper {
-        /*display: flex;*/
+
+
+
 
     }
+    .showTitle{
+        position: absolute;
+        top: 90%;
+        left: 46%;
+        display: flex;
+    }
+    .posts{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+
+    }
+
+    .comment{
+        display: block;
+        width: 18%;
+        text-align: center;
+        color: black;
+        background: blanchedalmond;
+        border: solid;
+        margin: 5px;
+
+    }
+    .h3{
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+
 
 </style>
 
@@ -62,11 +89,11 @@
         for (const key in obj) {
 
             if (typeof obj[key] === 'object') {
-                let params = document.createElement('div');
+                let params = document.createElement('h3');
                 params.innerText = `${key}`;
                 params.classList.add('params');
                 wrapper.append(params);
-                params.append();
+
                 unpackObj(obj[key]);
             } else {
                 let param = document.createElement('div');
@@ -83,6 +110,7 @@
 
     let urlPosts = new URL(`https://jsonplaceholder.typicode.com/posts?${userId}`);
     let showTitle = document.createElement('button');
+    showTitle.classList.add('showTitle');
     showTitle.innerText = 'post of current user';
     wrapper.append(showTitle);
 
@@ -93,11 +121,24 @@
 
         fetch(urlPosts)
             .then(value => value.json())
-            .then(value => {value.forEach(element=>{
+            .then(value => {
+                let posts = document.createElement('div');
+                posts.classList.add('posts');
+                document.body.appendChild(posts);
+                posts.classList.add('posts');
+
+                let h3 = document.createElement('h3');
+                h3.innerText = 'User\'s posts';
+                h3.classList.add('h3');
+                posts.append(h3);
+
+                value.forEach(element=>{
                 let a = document.createElement('a');
+                a.classList.add('comment');
                 a.innerText = element['title'];
                 a.href = 'post-details.html?info=' + JSON.stringify(element);
-                bigBlock.append(a);
+                posts.append(a);
+                showTitle.remove();
 
             })});
 
