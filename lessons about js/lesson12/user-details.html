@@ -6,10 +6,19 @@
 </head>
 <body>
 
+<style>
+    a {
+        display: block;
+    }
+
+</style>
+
 <script>
     let urlLoc = new URL(location.href);
     let user = urlLoc.searchParams.get('info');
     let userObj = JSON.parse(user);
+    let userId = `userId=${userObj['id']}`;
+
 
     let wrapper = document.createElement('div');
     document.body.appendChild(wrapper);
@@ -31,15 +40,67 @@
     unpackObj(userObj);
 
 
-    let showPosts = document.createElement('button');
-    showPosts.innerText = 'post of current user';
-    showPosts.onclick = function (){
-        wrapper.append('https://jsonplaceholder.typicode.com/users/USER_ID/posts)');
+
+    let urlPosts = new URL(`https://jsonplaceholder.typicode.com/posts?${userId}`);
+    let showTitle = document.createElement('button');
+    showTitle.innerText = 'post of current user';
+    wrapper.append(showTitle);
+
+
+
+
+    showTitle.onclick = function (){
+
+        fetch(urlPosts)
+            .then(value => value.json())
+            .then(value => {value.forEach(element=>{
+                let a = document.createElement('a');
+                a.innerText = element['title'];
+                a.href = 'post-details.html?info=' + JSON.stringify(element);
+                wrapper.append(a);
+
+            })});
+
+
     }
 
 
 
-    wrapper.append(showPosts);
+
+
+
+
+
+
+
+
+
+
+
+    /*showTitle.onclick = function (){
+        value.forEach(function (element) {
+            let a = document.createElement('a');
+            a.innerText = `${element['title']}`;
+            wrapper.append(a);
+        }
+    }*/
+
+
+    /*let showPosts = document.createElement('button');
+    showPosts.innerText = 'post of current user';
+    showPosts.onclick = function (){
+
+        wrapper.append(posts);
+    }
+
+
+
+    wrapper.append(showPosts);*/
+
+
+
+
+
 
 
 
