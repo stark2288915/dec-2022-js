@@ -7,13 +7,46 @@
 <body>
 
 <style>
-    a {
-        display: block;
+    body{
+        margin: 0px;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+    .bigBlock{
+
+        /*display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        background: dimgray;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+*/
+    }
+    /*.param{
+        display: flex;
+        border: solid;
+        width: 10%;
+        height: 100px;
+    }*/
+
+
+    .wrapper {
+        /*display: flex;*/
+
     }
 
 </style>
 
 <script>
+    let bigBlock = document.createElement('div');
+    bigBlock.classList.add('bigBlock');
+    document.body.appendChild(bigBlock);
+
+
     let urlLoc = new URL(location.href);
     let user = urlLoc.searchParams.get('info');
     let userObj = JSON.parse(user);
@@ -21,16 +54,23 @@
 
 
     let wrapper = document.createElement('div');
-    document.body.appendChild(wrapper);
+    wrapper.classList.add('wrapper');
+    bigBlock.append(wrapper);
 
 
     function unpackObj (obj) {
         for (const key in obj) {
 
             if (typeof obj[key] === 'object') {
+                let params = document.createElement('div');
+                params.innerText = `${key}`;
+                params.classList.add('params');
+                wrapper.append(params);
+                params.append();
                 unpackObj(obj[key]);
             } else {
                 let param = document.createElement('div');
+                param.classList.add('param');
                 param.innerText = `${key}: ${obj[key]}`;
                 wrapper.append(param);
             }
@@ -57,7 +97,7 @@
                 let a = document.createElement('a');
                 a.innerText = element['title'];
                 a.href = 'post-details.html?info=' + JSON.stringify(element);
-                wrapper.append(a);
+                bigBlock.append(a);
 
             })});
 
