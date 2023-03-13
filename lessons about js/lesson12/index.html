@@ -7,17 +7,36 @@
 <body>
 
 <style>
-    .wrapper {
+    .bigBlock{
         display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+
+
+    .wrapper {
+        width: 40%;
+        height: 100px;
+        display: inline-block;
         border: solid;
         margin: 5px;
-
+        align-items: center;
     }
+    .userId.userName{
+        display: inline-block;
+    }
+
 
 </style>
 
 <script>
+
+
     let url = new URL('https://jsonplaceholder.typicode.com/users');
+    let bigBlock = document.createElement('div');
+    bigBlock.classList.add('bigBlock');
+    document.body.appendChild(bigBlock);
 
 fetch(url)
     .then(value => value.json())
@@ -34,13 +53,21 @@ fetch(url)
         for (const user of value) {
             let wrapper = document.createElement('div');
             wrapper.classList.add('wrapper');
+            bigBlock.append(wrapper);
+
             let userId = document.createElement('div');
-            let userName = document.createElement('div');
+            userId.classList.add('userId');
             userId.innerText = `id: ${user['id']}`;
+
+            let userName = document.createElement('div');
+            userName.classList.add('userName');
             userName.innerText = `name: ${user['name']}`;
-            document.body.appendChild(wrapper);
+
+
+            //document.body.appendChild(wrapper);
 
             let a = document.createElement('a');
+            a.classList.add('showUser');
             a.innerText = 'showUser';
             a.href = 'user-details.html?info=' + JSON.stringify(user);
             wrapper.append(userId, userName, a);
